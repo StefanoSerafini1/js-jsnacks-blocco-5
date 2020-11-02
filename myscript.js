@@ -72,3 +72,56 @@ var nomi = [
      controllo.push(nomi.slice(numUno,numDue));
 //stampa nuovo array
      console.log(controllo);
+
+
+//jsnack 3
+//Creiamo un array di oggetti
+//Creiamo una copia da questo array di partenza e aggiungiamo ai singoli elementi una nuova
+// proprietà position che contiene una lettera casuale.
+//Non dobbiamo modificare l'array iniziale.
+
+//1° array
+var macchine = [
+    {
+        name: 'Ferrari',
+        color: 'rosso'
+    },
+    {
+        name: 'Mercedes',
+        color: 'argento'
+    },
+    {
+        name: 'Bmw',
+        color: 'nera'
+    },
+    {
+        name: 'Audi',
+        color: 'bianca'
+    }
+];
+
+var macchineDue = [];
+//copia primo nel secondo con creazione nuovo campo
+for (var i = 0; i < macchine.length; i++) {
+    var copiaArray = {
+        name: macchine[i].name,
+        color: macchine[i].color,
+        codice: randomLetters()
+    };
+
+    macchineDue.push(copiaArray);//mettere nel secondo array l'array copiato
+};
+
+console.table(macchine);
+
+console.table(macchineDue);
+
+//funzione per creare lettere random e assegnarne una usando anche random numbers per sceglierla tra le possibili
+function randomLetters() {
+    var letterepossibili = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lettera = letterepossibili[randomNumbers(0, letterepossibili.length - 1)];
+    return lettera;
+}
+function randomNumbers(min,max) {
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
+}
