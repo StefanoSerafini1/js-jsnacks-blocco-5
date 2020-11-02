@@ -32,3 +32,43 @@ var biciclette = [
             console.log(chiave.name + ' ' + chiave.peso);
         }
     }
+
+//jsnack 2
+//Partendo da un array di nomi,Chiedere due numeri all'utente per definire la posizione iniziale e finale
+//Il nuovo array deve contenere gli elementi dell'array originale aventi la posizione (indice array)
+//compresa tra i due numeri inseriti dall'utente.
+var nomi = [
+   {
+       nome:'Stefano',
+   },
+   {
+       nome:'Andrea',
+   },
+   {
+       nome:'Mattia',
+   },
+   {
+       nome:'Luca',
+   },
+   {
+       nome:'Giacomo',
+   },
+   {
+       nome:'Riccardo',
+   }
+]
+
+ var controllo = [];
+//richiesta e controllo valore inserito
+ var numUno = parseInt(prompt("Digitare un numero da 0 a 5"));
+ if (numUno > 5) {
+   var numUno = parseInt(prompt("Digitare un numero da 0 a 5"));
+ }
+ var numDue = parseInt(prompt("Digitare un numero da 0 a 5"));
+ if (numDue > 5) {
+   var numDue=parseInt(prompt("Digitare un numero da 0 a 5"));
+ }
+//funz slice per inserimento nomi in controllo
+     controllo.push(nomi.slice(numUno,numDue));
+//stampa nuovo array
+     console.log(controllo);
