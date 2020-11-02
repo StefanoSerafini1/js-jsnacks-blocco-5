@@ -106,14 +106,14 @@ for (var i = 0; i < macchine.length; i++) {
     var copiaArray = {
         name: macchine[i].name,
         color: macchine[i].color,
-        codice: randomLetters()
+        codice: randomLetters(),
     };
 
     macchineDue.push(copiaArray);//mettere nel secondo array l'array copiato
 };
-
+//stampa primo
 console.table(macchine);
-
+//stampa secondo con nuovo oggetto
 console.table(macchineDue);
 
 //funzione per creare lettere random e assegnarne una usando anche random numbers per sceglierla tra le possibili
@@ -123,5 +123,6 @@ function randomLetters() {
     return lettera;
 }
 function randomNumbers(min,max) {
-    return Math.floor( Math.random() * (max - min + 1) ) + min;
+    var num = Math.floor( Math.random() * (max - min + 1) ) + min;
+    return num
 }
